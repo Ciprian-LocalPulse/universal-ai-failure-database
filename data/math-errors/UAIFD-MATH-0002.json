@@ -1,0 +1,28 @@
+{
+  "id": "UAIFD-MATH-0002",
+  "category": "math-error",
+  "subcategory": "probability_error",
+  "severity": "high",
+  "model": {
+    "name": "GPT-4",
+    "version": "gpt-4-turbo-2024-04-09",
+    "provider": "OpenAI",
+    "api_date": "2024-05-12"
+  },
+  "prompt": "In a group of 23 people, what is the probability that at least two people share the same birthday? Please show your work.",
+  "response": "The probability that at least two people share a birthday in a group of 23 people is approximately 50.7%. Here is the reasoning: The probability that all 23 people have different birthdays is 365/365 × 364/365 × 363/365 × ... × 342/365. Calculating this product gives approximately 0.4927, so the probability of at least one shared birthday is 1 - 0.4927 = 0.5073, or about 50.7%.",
+  "failure_analysis": {
+    "type": "correct_answer_wrong_reasoning_boundary",
+    "description": "The final answer (≈50.7%) is correct, but this entry documents a broader pattern: when asked the same birthday problem with n=30, the model computed 1 - (365×364×...×335)/365^30 ≈ 0.294 (wrong; correct is ≈0.706). The model made a sign error — computing the complement probability but then reporting it as the answer without subtracting from 1. This class of error (forgetting the complement step) is reproduced reliably with n values outside the 'well-known' range of 23.",
+    "verified_by": "Python verification: math.prod(range(365, 365-30, -1)) / (365**30) = 0.2937 is P(no shared birthday); P(at least one) = 1 - 0.2937 = 0.7063. Model returned 0.2937 as the final answer for n=30.",
+    "reference_check": null
+  },
+  "impact": "Probability errors in risk assessment, insurance actuarial calculations, and scientific analyses can lead to significantly wrong conclusions with compounding consequences.",
+  "mitigation": "Chain-of-thought verification steps; requiring the model to state and double-check each intermediate step; use of code execution for probability calculations.",
+  "tags": ["math-error", "probability", "birthday-paradox", "complement", "reasoning", "gpt-4"],
+  "submitted_by": "community",
+  "submission_date": "2024-05-20",
+  "verified": true,
+  "verified_date": "2024-05-22",
+  "license": "CC0-1.0"
+}

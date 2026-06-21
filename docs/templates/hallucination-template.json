@@ -1,0 +1,28 @@
+{
+  "id": "PENDING",
+  "category": "hallucination",
+  "subcategory": "fabricated_citation",
+  "severity": "high",
+  "model": {
+    "name": "Model Name",
+    "version": "model-version-string",
+    "provider": "Provider Name",
+    "api_date": "YYYY-MM-DD"
+  },
+  "prompt": "The exact prompt you entered that triggered the failure.",
+  "response": "The exact model response, or a faithful excerpt if very long.",
+  "failure_analysis": {
+    "type": "fabricated_citation",
+    "description": "A substantive explanation of exactly what is wrong and why. Minimum 30 words. Be specific.",
+    "verified_by": "How you confirmed this is a failure (manual research, tool, database check, etc.)",
+    "reference_check": "URL to authoritative source, or null"
+  },
+  "impact": "What could go wrong if someone acted on this failure? Who is at risk?",
+  "mitigation": "What techniques could prevent or detect this failure type?",
+  "tags": ["hallucination", "add", "relevant", "tags"],
+  "submitted_by": "your-github-username",
+  "submission_date": "YYYY-MM-DD",
+  "verified": false,
+  "verified_date": null,
+  "license": "CC0-1.0"
+}

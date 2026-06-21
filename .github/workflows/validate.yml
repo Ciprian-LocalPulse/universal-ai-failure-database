@@ -1,0 +1,65 @@
+name: Validate Entries
+
+on:
+  pull_request:
+    paths:
+      - 'data/**/*.json'
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**/*.json'
+      - 'tools/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate all database entries
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate all JSON entries
+        run: python tools/validate_all.py
+
+      - name: Generate statistics summary
+        run: python tools/stats.py
+
+      - name: Run unit tests
+        run: pytest tests/ -v --tb=short
+
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint Python tools
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install flake8 black
+      - run: flake8 tools/ scripts/ --max-line-length=120
+      - run: black --check tools/ scripts/
+
+  json-format:
+    runs-on: ubuntu-latest
+    name: Check JSON formatting
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON syntax
+        run: |
+          find data/ -name "*.json" | while read f; do
+            python -m json.tool "$f" > /dev/null || (echo "Invalid JSON: $f" && exit 1)
+          done
+          echo "All JSON files are syntactically valid."

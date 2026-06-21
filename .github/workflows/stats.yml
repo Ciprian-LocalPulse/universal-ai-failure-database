@@ -1,0 +1,33 @@
+name: Update Database Statistics
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**/*.json'
+  schedule:
+    - cron: '0 0 * * 1'  # Weekly on Monday
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    name: Regenerate statistics badge data
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+
+      - name: Generate stats JSON
+        run: python tools/stats.py --json > docs/stats.json
+
+      - name: Commit updated stats
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/stats.json
+          git diff --staged --quiet || git commit -m "chore: update database statistics [skip ci]"
+          git push

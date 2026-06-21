@@ -1,0 +1,28 @@
+{
+  "id": "PENDING",
+  "category": "logic-error",
+  "subcategory": "affirming_the_consequent",
+  "severity": "medium",
+  "model": {
+    "name": "Model Name",
+    "version": "model-version-string",
+    "provider": "Provider Name",
+    "api_date": "YYYY-MM-DD"
+  },
+  "prompt": "The exact prompt. For logic errors, include the argument or reasoning chain you asked the model to evaluate or produce.",
+  "response": "The exact model response showing the logical error.",
+  "failure_analysis": {
+    "type": "affirming_the_consequent",
+    "description": "Identify the exact logical form of the error. Name the fallacy if applicable. Show the correct logical form and contrast with what the model produced.",
+    "verified_by": "Standard propositional logic / textbook reference / formal proof",
+    "reference_check": null
+  },
+  "impact": "What reasoning would be corrupted if this error propagated?",
+  "mitigation": "What techniques could detect or prevent this class of logical error?",
+  "tags": ["logic-error", "fallacy", "add-relevant-tags"],
+  "submitted_by": "your-github-username",
+  "submission_date": "YYYY-MM-DD",
+  "verified": false,
+  "verified_date": null,
+  "license": "CC0-1.0"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "PENDING",
+  "category": "math-error",
+  "subcategory": "arithmetic_error",
+  "severity": "medium",
+  "model": {
+    "name": "Model Name",
+    "version": "model-version-string",
+    "provider": "Provider Name",
+    "api_date": "YYYY-MM-DD"
+  },
+  "prompt": "The exact mathematical question or problem statement.",
+  "response": "The exact model response containing the mathematical error.",
+  "failure_analysis": {
+    "type": "arithmetic_error",
+    "description": "State the exact error: which step went wrong, what the wrong value was, and what the correct value is. Include the correct calculation.",
+    "verified_by": "Manual calculation / Python verification / Wolfram Alpha",
+    "reference_check": null,
+    "correct_answer": "Provide the correct numerical answer here"
+  },
+  "impact": "What downstream calculation or decision depends on this arithmetic?",
+  "mitigation": "Use code execution (Python) for numerical computation rather than in-context arithmetic.",
+  "tags": ["math-error", "arithmetic", "add-relevant-tags"],
+  "submitted_by": "your-github-username",
+  "submission_date": "YYYY-MM-DD",
+  "verified": false,
+  "verified_date": null,
+  "license": "CC0-1.0"
+}

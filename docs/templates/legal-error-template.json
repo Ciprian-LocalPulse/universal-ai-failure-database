@@ -1,0 +1,30 @@
+{
+  "id": "PENDING",
+  "category": "legal-error",
+  "subcategory": "fabricated_case_citation",
+  "severity": "critical",
+  "jurisdiction": "US-Federal",
+  "practice_area": "Contract Law",
+  "model": {
+    "name": "Model Name",
+    "version": "model-version-string",
+    "provider": "Provider Name",
+    "api_date": "YYYY-MM-DD"
+  },
+  "prompt": "The exact legal research prompt.",
+  "response": "The exact model response containing the legal error.",
+  "failure_analysis": {
+    "type": "fabricated_case_citation",
+    "description": "State exactly which citation, holding, or statutory provision is wrong. State what the correct law actually is. Reference the verification method.",
+    "verified_by": "Westlaw / LexisNexis / official government source / CourtListener",
+    "reference_check": "URL to official source or null"
+  },
+  "impact": "What legal harm could result from relying on this error?",
+  "mitigation": "Mandatory citation verification; never use LLM output as primary legal source.",
+  "tags": ["legal-error", "fabricated-citation", "add-practice-area"],
+  "submitted_by": "your-github-username",
+  "submission_date": "YYYY-MM-DD",
+  "verified": false,
+  "verified_date": null,
+  "license": "CC0-1.0"
+}

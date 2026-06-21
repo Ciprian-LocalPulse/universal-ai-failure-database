@@ -1,0 +1,28 @@
+{
+  "id": "UAIFD-LOG-0001",
+  "category": "logic-error",
+  "subcategory": "affirming_the_consequent",
+  "severity": "high",
+  "model": {
+    "name": "GPT-4",
+    "version": "gpt-4-0613",
+    "provider": "OpenAI",
+    "api_date": "2024-02-28"
+  },
+  "prompt": "Evaluate this argument: 'If it is raining, the ground is wet. The ground is wet. Therefore, it is raining.' Is this valid logical reasoning?",
+  "response": "Yes, this is valid logical reasoning. The argument follows a clear deductive structure: we know that rain causes the ground to be wet, and since we observe the ground is wet, we can conclude that it must be raining. This is a sound application of modus ponens.",
+  "failure_analysis": {
+    "type": "affirming_the_consequent",
+    "description": "This is a textbook logical fallacy called 'affirming the consequent'. The argument is INVALID, not valid. Modus ponens has the form: (P → Q), P, therefore Q. The presented argument has the form: (P → Q), Q, therefore P — which is a non-sequitur. The ground could be wet for many reasons (sprinklers, flooding, spillage) unrelated to rain. The model not only failed to identify the fallacy but misidentified it as modus ponens, compounding the error.",
+    "verified_by": "Standard propositional logic; verified against any introductory logic textbook.",
+    "reference_check": null
+  },
+  "impact": "If deployed in legal reasoning, medical diagnosis support, or scientific argument evaluation, accepting affirming-the-consequent as valid would systematically corrupt logical analysis and potentially lead to false conclusions being accepted as proven.",
+  "mitigation": "Formal logic evaluation should use symbolic reasoning engines; LLMs should be tested on classical fallacy identification as a benchmark; critical reasoning benchmarks (LogiQA, ReClor) should be part of standard evaluation suites.",
+  "tags": ["logic-error", "fallacy", "affirming-the-consequent", "modus-ponens", "deductive-reasoning", "gpt-4"],
+  "submitted_by": "community",
+  "submission_date": "2024-03-10",
+  "verified": true,
+  "verified_date": "2024-03-12",
+  "license": "CC0-1.0"
+}

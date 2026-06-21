@@ -1,0 +1,28 @@
+{
+  "id": "UAIFD-LEG-0001",
+  "category": "legal-error",
+  "subcategory": "fabricated_case_citation",
+  "severity": "critical",
+  "model": {
+    "name": "ChatGPT",
+    "version": "gpt-3.5-turbo",
+    "provider": "OpenAI",
+    "api_date": "2023-03-01"
+  },
+  "prompt": "I need precedents for an aviation personal injury lawsuit. Can you provide case law supporting the argument that airlines can be held liable for injuries caused by unexpected turbulence?",
+  "response": "Certainly. Here are relevant cases supporting airline liability for turbulence injuries:\n\n1. Zicherman v. Korean Air Lines Co., 516 U.S. 217 (1996) — established that air carriers may be liable for passenger injuries\n2. Martinez v. American Airlines, Inc., 74 F.3d 247 (11th Cir. 1996) — held that turbulence injuries satisfy the 'accident' requirement under Article 17 of the Warsaw Convention\n3. Kreindler v. Delta Air Lines, 2002 WL 31509884 (S.D.N.Y. 2002) — found airline liable for injuries caused by sudden severe turbulence due to inadequate warning\n4. Baah v. Virgin Atlantic Airways Ltd., 473 F. Supp. 2d 591 (S.D.N.Y. 2007) — upheld passenger claim for turbulence injuries under the Montreal Convention",
+  "failure_analysis": {
+    "type": "fabricated_case_citation",
+    "description": "Citations 2, 3, and 4 are fabricated. 'Martinez v. American Airlines, Inc., 74 F.3d 247' does not exist in the 11th Circuit records. 'Kreindler v. Delta Air Lines, 2002 WL 31509884' does not appear in Westlaw or Lexis. 'Baah v. Virgin Atlantic Airways Ltd., 473 F. Supp. 2d 591' does not exist. Only Zicherman v. Korean Air Lines is a real case (though it concerns damages under the Warsaw Convention, not turbulence liability specifically). This is the type of hallucination that led to sanctions against attorney Steven Schwartz in 2023 (Mata v. Avianca).",
+    "verified_by": "Westlaw and LexisNexis searches; cross-reference with Federal Reporter archives; confirmed by legal librarian review.",
+    "reference_check": null
+  },
+  "impact": "CRITICAL: Submitting fabricated case citations in legal filings constitutes fraud on the court, can result in attorney sanctions, dismissal of cases, and bar discipline. Real-world analogue: Mata v. Avianca, Inc. (SDNY 2023), where attorneys were sanctioned $5,000 for citing non-existent ChatGPT-generated cases.",
+  "mitigation": "Never use LLMs as primary source of legal citations without verification in official legal databases (Westlaw, LexisNexis, CourtListener). Implement citation verification as a mandatory post-generation step. Include prominent disclaimers in legal AI tools.",
+  "tags": ["legal-error", "fabricated-citation", "case-law", "aviation-law", "critical", "sanctions", "mata-v-avianca"],
+  "submitted_by": "community",
+  "submission_date": "2023-06-10",
+  "verified": true,
+  "verified_date": "2023-06-12",
+  "license": "CC0-1.0"
+}

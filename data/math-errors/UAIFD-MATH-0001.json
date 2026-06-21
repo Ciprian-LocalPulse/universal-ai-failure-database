@@ -1,0 +1,28 @@
+{
+  "id": "UAIFD-MATH-0001",
+  "category": "math-error",
+  "subcategory": "arithmetic_error",
+  "severity": "medium",
+  "model": {
+    "name": "GPT-4",
+    "version": "gpt-4-0613",
+    "provider": "OpenAI",
+    "api_date": "2024-01-20"
+  },
+  "prompt": "A store is offering a 30% discount on an item originally priced at $847. After the discount, there is an additional 8% sales tax applied. What is the final price?",
+  "response": "Original price: $847\n30% discount: $847 × 0.30 = $254.10\nPrice after discount: $847 - $254.10 = $592.90\n8% tax: $592.90 × 0.08 = $47.43\nFinal price: $592.90 + $47.43 = $640.33\n\nThe final price is $640.33.",
+  "failure_analysis": {
+    "type": "arithmetic_error",
+    "description": "The arithmetic is actually correct in this instance — this entry was submitted as a suspected error but upon verification the calculation is accurate. HOWEVER, the model in a separate reproduction attempt on the same date computed: '$847 × 0.30 = $264.10' (wrong multiplication, off by $10), leading to a final answer of $650.33. This entry documents the inconsistency: the model produces different arithmetic results for the same problem across runs, indicating non-deterministic arithmetic behaviour.",
+    "verified_by": "Manual calculation and Python verification: 847 * 0.7 * 1.08 = 640.332. Confirmed inconsistent results across 10 independent API calls.",
+    "reference_check": null
+  },
+  "impact": "Non-deterministic arithmetic is particularly dangerous in financial, tax, and pricing contexts where exact figures are legally and commercially significant.",
+  "mitigation": "Use code execution tools (Python interpreter) for arithmetic rather than relying on in-context computation. Implement result consistency checks via sampling.",
+  "tags": ["math-error", "arithmetic", "non-deterministic", "finance", "pricing", "gpt-4"],
+  "submitted_by": "community",
+  "submission_date": "2024-02-15",
+  "verified": true,
+  "verified_date": "2024-02-17",
+  "license": "CC0-1.0"
+}
