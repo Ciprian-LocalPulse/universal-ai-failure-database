@@ -8,7 +8,8 @@ on:
       - 'data/**/*.json'
   schedule:
     - cron: '0 0 * * 1'  # Weekly on Monday
-
+permissions:
+  contents: write
 jobs:
   update-stats:
     runs-on: ubuntu-latest
