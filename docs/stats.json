@@ -3,39 +3,39 @@
   "verified": 8,
   "unverified": 0,
   "by_category": {
+    "legal-error": 1,
+    "hallucination": 3,
     "logic-error": 1,
     "math-error": 2,
-    "legal-error": 1,
-    "vulnerability": 1,
-    "hallucination": 3
+    "vulnerability": 1
   },
   "by_severity": {
+    "critical": 2,
     "high": 5,
-    "medium": 1,
-    "critical": 2
+    "medium": 1
   },
   "by_provider": {
     "OpenAI": 7,
     "Anthropic": 1
   },
   "by_model": {
-    "GPT-4": 5,
     "ChatGPT": 1,
-    "GPT-3.5": 1,
-    "Claude 2": 1
+    "GPT-4": 5,
+    "Claude 2": 1,
+    "GPT-3.5": 1
   },
   "unique_models": 4,
   "unique_providers": 2,
   "top_tags": {
     "gpt-4": 5,
     "hallucination": 3,
-    "math-error": 2,
     "fabricated-citation": 2,
     "critical": 2,
     "academic": 2,
-    "logic-error": 1,
-    "fallacy": 1,
-    "affirming-the-consequent": 1,
-    "modus-ponens": 1
+    "math-error": 2,
+    "legal-error": 1,
+    "case-law": 1,
+    "aviation-law": 1,
+    "sanctions": 1
   }
 }
