@@ -3,15 +3,15 @@
   "verified": 8,
   "unverified": 0,
   "by_category": {
+    "logic-error": 1,
     "legal-error": 1,
     "hallucination": 3,
-    "logic-error": 1,
     "math-error": 2,
     "vulnerability": 1
   },
   "by_severity": {
-    "critical": 2,
     "high": 5,
+    "critical": 2,
     "medium": 1
   },
   "by_provider": {
@@ -19,8 +19,8 @@
     "Anthropic": 1
   },
   "by_model": {
-    "ChatGPT": 1,
     "GPT-4": 5,
+    "ChatGPT": 1,
     "Claude 2": 1,
     "GPT-3.5": 1
   },
@@ -33,9 +33,9 @@
     "critical": 2,
     "academic": 2,
     "math-error": 2,
-    "legal-error": 1,
-    "case-law": 1,
-    "aviation-law": 1,
-    "sanctions": 1
+    "logic-error": 1,
+    "fallacy": 1,
+    "affirming-the-consequent": 1,
+    "modus-ponens": 1
   }
 }
