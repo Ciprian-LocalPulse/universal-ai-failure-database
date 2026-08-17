@@ -3,11 +3,11 @@
   "verified": 8,
   "unverified": 0,
   "by_category": {
+    "vulnerability": 1,
     "logic-error": 1,
-    "legal-error": 1,
     "hallucination": 3,
-    "math-error": 2,
-    "vulnerability": 1
+    "legal-error": 1,
+    "math-error": 2
   },
   "by_severity": {
     "high": 5,
@@ -20,22 +20,22 @@
   },
   "by_model": {
     "GPT-4": 5,
-    "ChatGPT": 1,
+    "GPT-3.5": 1,
     "Claude 2": 1,
-    "GPT-3.5": 1
+    "ChatGPT": 1
   },
   "unique_models": 4,
   "unique_providers": 2,
   "top_tags": {
     "gpt-4": 5,
     "hallucination": 3,
-    "fabricated-citation": 2,
     "critical": 2,
     "academic": 2,
+    "fabricated-citation": 2,
     "math-error": 2,
-    "logic-error": 1,
-    "fallacy": 1,
-    "affirming-the-consequent": 1,
-    "modus-ponens": 1
+    "vulnerability": 1,
+    "prompt-injection": 1,
+    "indirect-injection": 1,
+    "email": 1
   }
 }
