@@ -4,15 +4,15 @@
   "unverified": 0,
   "by_category": {
     "legal-error": 1,
-    "logic-error": 1,
-    "hallucination": 3,
     "math-error": 2,
-    "vulnerability": 1
+    "vulnerability": 1,
+    "hallucination": 3,
+    "logic-error": 1
   },
   "by_severity": {
     "critical": 2,
-    "high": 5,
-    "medium": 1
+    "medium": 1,
+    "high": 5
   },
   "by_provider": {
     "OpenAI": 7,
@@ -31,8 +31,8 @@
     "hallucination": 3,
     "fabricated-citation": 2,
     "critical": 2,
-    "academic": 2,
     "math-error": 2,
+    "academic": 2,
     "legal-error": 1,
     "case-law": 1,
     "aviation-law": 1,
