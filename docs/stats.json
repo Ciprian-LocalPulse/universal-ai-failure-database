@@ -3,8 +3,8 @@
   "verified": 8,
   "unverified": 0,
   "by_category": {
-    "math-error": 2,
     "vulnerability": 1,
+    "math-error": 2,
     "hallucination": 3,
     "logic-error": 1,
     "legal-error": 1
@@ -20,8 +20,8 @@
   },
   "by_model": {
     "GPT-4": 5,
-    "GPT-3.5": 1,
     "Claude 2": 1,
+    "GPT-3.5": 1,
     "ChatGPT": 1
   },
   "unique_models": 4,
@@ -30,12 +30,12 @@
     "gpt-4": 5,
     "hallucination": 3,
     "math-error": 2,
-    "critical": 2,
     "fabricated-citation": 2,
     "academic": 2,
-    "probability": 1,
-    "birthday-paradox": 1,
-    "complement": 1,
-    "reasoning": 1
+    "critical": 2,
+    "vulnerability": 1,
+    "prompt-injection": 1,
+    "indirect-injection": 1,
+    "email": 1
   }
 }
